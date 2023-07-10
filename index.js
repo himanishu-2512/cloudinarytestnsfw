@@ -2,11 +2,11 @@ const express = require('express');
 const app = express();
 const cloudinary = require('cloudinary')
 const multer = require('multer')
-
+const cors=require("cors")
 const mongoose = require('mongoose');
 const uri = "mongodb+srv://abhinav_passport_project:abhinav123@cluster0.ipq1n.mongodb.net/imagedb?retryWrites=true&w=majority";
 
-
+app.use(cors({origin:'*'}));
 // Multer configuration
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
